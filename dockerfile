@@ -32,4 +32,4 @@ RUN source /usr/nobody/venv/bin/activate \
 
 WORKDIR /usr/nobody/CyTag-master
 
-ENTRYPOINT ["python", "CyTag.py"]
+ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag.py"]

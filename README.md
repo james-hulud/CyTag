@@ -106,15 +106,17 @@ python3 *PATH*/CyTag/CyTag.py < example.txt
 
 ## Docker
 
-You can run the *CyTag* package through the provided docker container like so:
+You can run the *CyTag* package through the provided docker container like so: 
+
+*NOTE: if this is the first time you have used the docker container it will first download the container and then run it*
 
 ``` bash
-docker run --rm "Dw i'n hoffi coffi. Dw i eisiau bwyta'r cynio hefyd!"
+docker run --rm ghcr.io/ucrel/cytag:latest "Dw i'n hoffi coffi. Dw i eisiau bwyta'r cynio hefyd!"
 ```
 
 All of the arguments after will be passed directly to [CyTag.py](./CyTag.py).
 
-The docker container is [hosted on GitHub as a package](). By default the container runs as the user `nobody`, which is a random non-root user, on a debian based operating system. For more information on how the docker container was created see the [dockerfile](./dockerfile).
+The docker container is [hosted on GitHub as a package](https://github.com/UCREL/CyTag/pkgs/container/cytag). By default the container runs as the user `nobody`, which is a random non-root user, on a debian based operating system. For more information on how the docker container was created see the [dockerfile](./dockerfile).
 
 ## Contact
 
