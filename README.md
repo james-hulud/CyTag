@@ -24,6 +24,9 @@ The following *python* libraries will be needed to run various *CyTag* component
 * [lxml](https://lxml.de/)
 * [progress](https://github.com/verigak/progress)
 * [NumPy](http://www.numpy.org/)
+* [unicodedata2](https://pypi.org/project/unicodedata2/)
+
+All of these python pip dependencies can be found in the [requirements.txt file](./requirements.txt).
 
 *CyTag* depends on having a working version of VISL's [Constraint Grammar v3](http://visl.sdu.dk/cg3.html) (a.k.a. CG-3). For Ubuntu/Debian, a pre-built CG-3 package can be easily installed from a ready-made nightly repository:
 
@@ -34,6 +37,7 @@ sudo apt-get install cg3
 
 See http://visl.sdu.dk/cg3/chunked/installation.html for installation instructions for other platforms.
 
+**You can run the *CyTag* package through a docker container**, to do so see the [docker section below.](#docker)
 
 ## Usage
 
@@ -100,6 +104,17 @@ cat example.txt | python3 *PATH*/CyTag/CyTag.py
 python3 *PATH*/CyTag/CyTag.py < example.txt
 ```
 
+## Docker
+
+You can run the *CyTag* package through the provided docker container like so:
+
+``` bash
+docker run --rm "Dw i'n hoffi coffi. Dw i eisiau bwyta'r cynio hefyd!"
+```
+
+All of the arguments after will be passed directly to [CyTag.py](./CyTag.py).
+
+The docker container is [hosted on GitHub as a package](). By default the container runs as the user `nobody`, which is a random non-root user, on a debian based operating system. For more information on how the docker container was created see the [dockerfile](./dockerfile).
 
 ## Contact
 
