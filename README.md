@@ -135,6 +135,15 @@ All of the arguments after `docker run --rm ghcr.io/ucrel/cytag:latest` will be 
 
 The docker container is [hosted on GitHub as a package](https://github.com/UCREL/CyTag/pkgs/container/cytag). By default the container runs as the user `nobody`, which is a random non-root user, on a debian based operating system. For more information on how the docker container was created see the [dockerfile](./dockerfile).
 
+### Examples
+
+Below we list some examples on how to use the docker container:
+
+1. **Taking input text from standard input**
+``` bash
+cat example.txt | docker run -i --rm ghcr.io/ucrel/cytag:latest
+```
+
 ## Contact
 
 Questions about *CyTag* can be directed to: 
