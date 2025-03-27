@@ -18,7 +18,7 @@ RUN mkdir -p /usr/nobody \
 
 USER nobody
 
-RUN curl -L https://github.com/UCREL/CyTag/archive/refs/heads/main.zip -o /usr/nobody/cytag.zip \
+RUN curl -L https://github.com/james-hulud/CyTag/archive/refs/heads/main.zip -o /usr/nobody/cytag.zip \
     && unzip /usr/nobody/cytag.zip -d /usr/nobody/. \
     && rm /usr/nobody/cytag.zip
 
@@ -32,4 +32,6 @@ RUN source /usr/nobody/venv/bin/activate \
 
 WORKDIR /usr/nobody/CyTag-main
 
-ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag.py"]
+#ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag.py"]
+
+ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag_Server.py"]

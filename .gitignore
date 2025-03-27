@@ -6,3 +6,4 @@ src/__pycache__
 src/shared/__pycache__
 outputs/*
 inputs/*
+venv
