@@ -34,4 +34,12 @@ WORKDIR /usr/nobody/CyTag-main
 
 #ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag.py"]
 
-ENTRYPOINT ["/usr/nobody/venv/bin/python", "CyTag_Server.py"]
+EXPOSE 8000
+
+ENV FLASK_APP=CyTag_Server.py
+ENV FLASK_RUN_PORT=8000
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
+
+CMD ["/usr/nobody/venv/bin/flask", "run"]
