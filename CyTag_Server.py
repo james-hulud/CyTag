@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, request
+from .CyTag import process
 
 app = Flask(__name__)
 
@@ -6,7 +7,11 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def tag_text():
 	print("Server running")
-	return "<p>hello world</p>"
+	data = request.get_json()
+
+	tagged_text = process(data["text"])
+
+	return f"<p>{tagged_text}</p>"
 
 
 if __name__ == '__main__':
