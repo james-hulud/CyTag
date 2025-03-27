@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/tag_text', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def tag_text():
 	print("Server running")
 	return "<p>hello world</p>"
