@@ -60,7 +60,7 @@ def process(input_text, output_name=None, directory=None, component=None, output
 	else:
 		if [output_name, directory, component, output_format] == [None, None, None, None]:
 			output = pos_tagger(input_text)
-			print(output)
+			return output  # Modified to work with REST API
 		else:
 			if component != None:
 				if component == "seg":

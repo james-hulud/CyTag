@@ -1,6 +1,6 @@
 FROM python:3.9.7-slim-bullseye
 
-RUN apt-get update && apt-get install -y curl unzip gcc \
+RUN apt-get update && apt-get install -y curl unzip gcc vim \
     && rm -rf /var/lib/apt/lists/* 
 
 COPY install_cg3.sh /tmp/install_cg3.sh
@@ -12,15 +12,13 @@ RUN bash /tmp/install_cg3.sh \
 
 RUN pip install --no-cache-dir virtualenv
 
-RUN mkdir -p /usr/nobody \
+RUN mkdir -p /usr/nobody/CyTag-main \
     && python -m virtualenv /usr/nobody/venv \
     && chmod -R 777 /usr/nobody
 
 USER nobody
 
-RUN curl -L https://github.com/james-hulud/CyTag/archive/refs/heads/main.zip -o /usr/nobody/cytag.zip \
-    && unzip /usr/nobody/cytag.zip -d /usr/nobody/. \
-    && rm /usr/nobody/cytag.zip
+COPY . /usr/nobody/CyTag-main
 
 SHELL ["/bin/bash", "-c"]
 
