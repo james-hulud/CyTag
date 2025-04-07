@@ -22,7 +22,12 @@ def tag_text():
 
 		# Executes tagging with CyTag and returns result as a string with tab separated columns
 		tagged_text = process(text_data)
-		df = pd.read_csv(io.StringIO(tagged_text), sep='\t', header=None)
+		df = pd.read_csv(
+			io.StringIO(tagged_text),
+			sep='\t',
+			header=None,
+			index_col=False
+		)
 		csv_out = df.to_csv(index=False)
 		return Response(csv_out, mimetype="text/csv")
 	except Exception as e:
